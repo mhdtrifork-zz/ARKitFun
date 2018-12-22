@@ -28,38 +28,15 @@
  * THE SOFTWARE.
  */
 
-import ARKit
-import SceneKit
+import UIKit
 
-protocol VideoNodeHandler: class {
-    func createNode() -> SCNNode?
-    func removeNode()
-}
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-protocol VideoPlayerDelegate: class {
-    func didStartPlay()
-    func didEndPlay()
-}
+  var window: UIWindow?
 
-class BillboardContainer {
-    var billboardAnchor: ARAnchor
-    var billboardNode: SCNNode?
-    var videoAnchor: ARAnchor?
-    var videoNode: SCNNode?
-    var plane: RectangularPlane
-    var viewController: BillboardViewController?
-    
-    var hasBillboardNode: Bool { return billboardNode != nil }
-    var hasVideoNode: Bool { return videoNode != nil }
-    var isFullScreen = false
-    weak var videoNodeHandler: VideoNodeHandler?
-    weak var videoPlayerDelegate: VideoPlayerDelegate?
-    
-    init(billboardAnchor: ARAnchor, plane: RectangularPlane) {
-        self.billboardAnchor = billboardAnchor
-        self.plane = plane
-        self.billboardNode = nil
-        self.videoAnchor = nil
-        self.videoNode = nil
-    }
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Override point for customization after application launch.
+    return true
+  }
 }
